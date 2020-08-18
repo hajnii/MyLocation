@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <RadioGroup
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/englishRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="영어"
+            />
+        <RadioButton
+            android:id="@+id/simplifiedChineseRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="중국어 간체"
+            />
+        <RadioButton
+            android:id="@+id/traditionalChineseRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="중국어 번체"
+            />
+
+        <RadioButton
+            android:id="@+id/thaiRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="태국어"
+            />
+
+    </RadioGroup>
+    <EditText
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:id="@+id/inputEdit"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:hint="번역할 내용을 입력하세요."
+        android:textSize="24sp"
+        />
+
+    <TextView
+
+        android:id="@+id/translationTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="번역된 언어"
+        android:layout_below="@+id/inputEdit"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="24sp"
+        />
+    <Button
+        android:layout_above="@+id/historyImg"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/translationBtn"
+        android:layout_width="300dp"
+        android:background="#C2F6A7"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:text="번역"
+        android:textSize="30sp"
+        />
+
+    <ImageView
+        android:layout_alignParentBottom="true"
+        android:id="@+id/historyImg"
+        android:layout_width="match_parent"
+        android:layout_height="99dp"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:textSize="30sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="30dp"
+        />
+
+</RelativeLayout>

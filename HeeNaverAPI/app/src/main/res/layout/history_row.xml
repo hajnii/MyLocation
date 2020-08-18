@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:cardCornerRadius="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/beforeLanguageTxt"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:text="번역할 언어"
+                android:textSize="18sp"
+                />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/stat_notify_sync"
+                tools:srcCompat="@android:drawable/ic_menu_rotate" />
+
+            <TextView
+                android:id="@+id/afterLanguageTxt"
+                android:layout_width="0dp"
+                android:layout_weight="3"
+                android:layout_height="wrap_content"
+                android:text="번역된 언어"
+                android:textSize="18sp"
+
+                />
+
+            <ImageView
+                android:id="@+id/deleteImg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_delete" />
+
+
+        </LinearLayout>
+
+            <TextView
+                android:id="@+id/beforeTxt"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="번역전 언어"
+
+                />
+            <TextView
+                android:id="@+id/afterTxt"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:text="번역후 언어"
+
+                />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

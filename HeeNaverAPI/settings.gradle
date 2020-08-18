@@ -1,0 +1,2 @@
+rootProject.name='Naver API'
+include ':app'

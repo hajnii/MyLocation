@@ -36,11 +36,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.youtubeArrayList = youtubeArrayList;
     }
 
-
-
-
-
-
     @NonNull
     @Override
     public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -59,7 +54,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         holder.txtTitle.setText(title);
         holder.txtDescription.setText(description);
-
 
 
         GlideUrl glideUrl = new GlideUrl(mediumUrl,

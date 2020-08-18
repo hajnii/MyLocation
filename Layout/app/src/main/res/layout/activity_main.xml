@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageCat"
+        android:layout_width="350dp"
+        android:layout_height="230dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/cat" />
+
+    <EditText
+        android:id="@+id/textAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="When did your pet born?"
+        android:layout_marginTop="50dp"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/btnClick"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="28dp"
+        android:text="CALULATE" />
+</LinearLayout>

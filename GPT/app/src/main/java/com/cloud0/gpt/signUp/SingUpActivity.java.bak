@@ -1,0 +1,93 @@
+package com.cloud0.gpt.signUp;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import com.cloud0.gpt.R;
+import com.cloud0.gpt.model.SignIn;
+import com.cloud0.gpt.util.Util;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+public class SingUpActivity extends AppCompatActivity {
+
+    EditText signUp_editId;
+    EditText signUp_editPassword;
+    EditText signUp_editPasswordCheck;
+    Spinner signUp_spinner;
+    //CheckBox signUp_checkBox;
+    Button signUp_btnSignUp;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_sing_up);
+
+        signUp_editId = findViewById(R.id.signUp_editId);
+        signUp_editPassword = findViewById(R.id.signUp_editPassword);
+        signUp_editPasswordCheck = findViewById(R.id.signUp_editPasswordCheck);
+        signUp_spinner = findViewById(R.id.signUp_spinner);
+        //signUp_checkBox = findViewById(R.id.signUp_checkBox);
+        signUp_btnSignUp = findViewById(R.id.signUp_btnSignUp);
+
+        // 회원 가입
+        // todo 이메일 인증 약관 체크 여부
+        signUp_btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String userId = signUp_editId.getText().toString().trim();
+                String spinner = signUp_spinner.getSelectedItem().toString().trim();
+                String password = signUp_editPassword.getText().toString().trim();
+                if (spinner.equals("직접입력")){
+                    spinner = "";
+                }else {
+                    spinner = "@"+spinner;
+                }
+                userId = userId +spinner;
+
+                if (!userId.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+[.]+[a-zA-Z]+$")){
+                    Toast.makeText(SingUpActivity.this, "email 을 입력해 주세요", Toast.LENGTH_SHORT).show();
+                    return;
+                }else if (!password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{8,14}$")){
+                    Toast.makeText(SingUpActivity.this, "8~14자 영문 대 소문자, 숫자, 특수문자를 사용하세요.", Toast.LENGTH_SHORT).show();
+                    return;
+                }else if (!password.equals(signUp_editPasswordCheck.getText().toString().trim())){
+                    Toast.makeText(SingUpActivity.this, "동일한 비밀번호를 입력해 주세요.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
+                SignIn signIn = new SignIn(userId,password);
+
+                db.collection(Util.DATABASE_NAME).add(signIn).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(SingUpActivity.this, "회원가입을 축하 합니다.", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+
+                    }
+                });
+
+            }
+        });
+
+
+    }
+}

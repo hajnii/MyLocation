@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "305092835502",
+    "firebase_url": "https://firestore-fee30.firebaseio.com",
+    "project_id": "firestore-fee30",
+    "storage_bucket": "firestore-fee30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305092835502:android:d9d89d9b98a4c8494bd53f",
+        "android_client_info": {
+          "package_name": "com.test.firestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305092835502-t1am7rd5rlrn1u4ph9l682o9q3gm6k30.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.test.firestore",
+            "certificate_hash": "8c400458f2b2c249a3b410a088b43deda2de424a"
+          }
+        },
+        {
+          "client_id": "305092835502-rje86h13m1gagjjlv1o7gn9nnllc1c93.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlZLMmSYLIXA6_CLz5YDFYmhf9eLmBdx4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305092835502-rje86h13m1gagjjlv1o7gn9nnllc1c93.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
